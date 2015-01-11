@@ -18,3 +18,22 @@ Tinytest.add('It should add timestamp to DaigoPoints docs', function (test) {
 
   test.isTrue(doc.date instanceof Date);
 });
+
+Tinytest.add('It should return total points of given user', function (test) {
+  var userId = Meteor.users.insert({});
+
+  DaigoPoints.add(1, userId);
+  DaigoPoints.add(1, userId);
+  
+  test.equal(DaigoPoints.getTotal(userId), 2);
+});
+
+Tinytest.add('It should return 0 total points if user has no points', function (test) {
+  var userId = Meteor.users.insert({});
+
+  test.equal(DaigoPoints.getTotal(userId), 0);
+})
+
+Tinytest.add('It should return 0 total points if there is no userId', function (test) {
+  test.equal(DaigoPoints.getTotal('12345'), 0);
+});

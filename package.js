@@ -11,8 +11,9 @@ Package.onUse(function (api) {
   api.versionsFrom('METEOR@0.9.2');
 
   api.use('matb33:collection-hooks', both);
+  api.use('underscore', both);
   api.addFiles([
-    'both/lib.js'
+    'both/points.js'
   ], both);
   api.addFiles([
     'server/points.js'

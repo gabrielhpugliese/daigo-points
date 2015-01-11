@@ -1,2 +1,0 @@
-DaigoPoints = new Meteor.Collection();
-
