@@ -1,4 +1,4 @@
-DaigoPoints = new Meteor.Collection();
+DaigoPoints = new Mongo.Collection('daigo_points');
 
 /* 
  * Custom methods
